@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize")
 
-const db = new Sequelize.Sequelize('testdatabase', 'remote', 'Star123!@#', {
-  host: '146.190.160.152',
+const db = new Sequelize.Sequelize('testdatabase', 'root', 'Aeritex124!@$iekoMedia', {
+  host: '127.0.0.1',
   dialect: 'mysql'
 })
 
