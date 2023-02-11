@@ -39,9 +39,7 @@ const register = async (req, res) => {
 } 
 
 const login = async(req, res) => {
-  // try {
-    const users = await User.findAll()
-    console.log(users)
+  try {
     const user = await User.findAll({
       where: {
         email: req.body.email
@@ -67,9 +65,9 @@ const login = async(req, res) => {
     })
 
     return res.json({ accessToken, refreshToken })
-  // } catch (err) {
-  //   res.status(404).json({ msg: "Email not found", err })
-  // }
+  } catch (err) {
+    res.status(404).json({ msg: "Email not found", err })
+  }
 }
 
 const logout = async (req, res) => {
