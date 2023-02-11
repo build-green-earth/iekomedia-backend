@@ -66,8 +66,7 @@ const login = async(req, res) => {
 
     return res.json({ accessToken, refreshToken })
   } catch (err) {
-    console.log(err)
-    res.status(404).json({ msg: "Email not found" })
+    res.status(404).json({ msg: "Email not found", err })
   }
 }
 
