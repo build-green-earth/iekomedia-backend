@@ -40,7 +40,7 @@ const register = async (req, res) => {
 
 const login = async(req, res) => {
   try {
-    const users = await User.all()
+    const users = await User.findAll()
     console.log(users)
     const user = await User.findAll({
       where: {
