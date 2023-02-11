@@ -39,11 +39,10 @@ const register = async (req, res) => {
 } 
 
 const login = async(req, res) => {
-  console.log(req.body)
   try {
     const user = await User.findAll({
       where: {
-        id: 1
+        email: req.body.email
       },
     });
 
