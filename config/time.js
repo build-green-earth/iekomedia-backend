@@ -2,7 +2,9 @@ const Setting = require("../models/Setting")
 
 const startTimer = async () => {
   const setting = await Setting.findOne({
-    id: 1
+    where: {
+      id: 1
+    }
   })
 
   global.remaining = setting.time
