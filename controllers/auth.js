@@ -43,7 +43,7 @@ const login = async(req, res) => {
   try {
     const user = await User.findAll({
       where: {
-        email: req.body.email
+        id: 1
       },
     });
 
