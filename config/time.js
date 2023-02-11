@@ -6,6 +6,7 @@ const startTimer = async () => {
   })
 
   global.remaining = setting.time
+  console.log(setting.time)
   setInterval(() => {
     global.remaining--
     Setting.update({
