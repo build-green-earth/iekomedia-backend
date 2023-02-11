@@ -2,6 +2,7 @@ const User = require("../models/User.js")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 const { Op } = require("sequelize");
+const Setting = require("../models/Setting.js");
 
 const register = async (req, res) => {
   const { username, email, password, confirmPassword, role, location } = req.body
@@ -189,4 +190,8 @@ const updateUser = async(req, res) => {
   res.sendStatus(200)
 }
 
-module.exports = { login, logout, register, allUsers, allUsers, approveUser, updateUser }
+const remainingTime = async(req, res) => {
+  res.json({ time: global.remaining })
+}
+
+module.exports = { login, logout, register, allUsers, allUsers, approveUser, updateUser, remainingTime }
