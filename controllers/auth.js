@@ -39,7 +39,7 @@ const register = async (req, res) => {
 } 
 
 const login = async(req, res) => {
-  try {
+  // try {
     const users = await User.findAll()
     console.log(users)
     const user = await User.findAll({
@@ -47,6 +47,7 @@ const login = async(req, res) => {
         email: req.body.email
       },
     });
+    console.log(user)
 
     const match = await bcrypt.compare(req.body.password, user[0].password)
     if (!match) return res.status(400).json({msg: "Wrong Password"});
@@ -66,9 +67,9 @@ const login = async(req, res) => {
     })
 
     return res.json({ accessToken, refreshToken })
-  } catch (err) {
-    res.status(404).json({ msg: "Email not found", err })
-  }
+  // } catch (err) {
+  //   res.status(404).json({ msg: "Email not found", err })
+  // }
 }
 
 const logout = async (req, res) => {
