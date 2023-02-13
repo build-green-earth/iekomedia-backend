@@ -2,7 +2,7 @@ const Setting = require("../models/Setting")
 
 const startTimer = async () => {
 
-  const setting = Setting.findOne({
+  const setting = await Setting.findOne({
     where: {
       id: 1
     }
