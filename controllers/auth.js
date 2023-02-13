@@ -199,7 +199,7 @@ const remainingTime = async(req, res) => {
 
 const uploadAvatar = async (req, res) => {
   upload(req, res, (err) => {
-    console.log(err)
+    res.sendStatus(200)
   })
 }
 
