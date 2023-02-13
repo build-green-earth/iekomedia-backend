@@ -3,6 +3,9 @@ const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 const { Op } = require("sequelize");
 const Setting = require("../models/Setting.js");
+const { upload } = require("../config/multer")
+const path = require('path')
+const fs = require('fs')
 
 const register = async (req, res) => {
   const { username, email, password, confirmPassword, role, location } = req.body
@@ -195,13 +198,7 @@ const remainingTime = async(req, res) => {
 }
 
 const uploadAvatar = async (req, res) => {
-
-  const file = req.file.avatar
-  const filePath = path.join(__dirname, '../client', 'uploads', req.user.username+".png")
-
-  file.mv(filePath, err => {
-    if (err) return res.status(500).send(err)
-    res.send({msg: 'uploaded'})
+  upload(req, res, (err) => {
   })
 }
 

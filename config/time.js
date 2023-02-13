@@ -1,27 +1,9 @@
 const Setting = require("../models/Setting")
 
 const startTimer = async () => {
-  let setting
-  try {
-    setting = await Setting.findOne({
-      where: {
-        id: 1
-      }
-    })
-  } catch (err) {
-    console.log(err)
-  }
-  
-  global.remaining = setting.time
-  console.log(setting.time)
+  global.remaining = 2073600
   setInterval(() => {
     global.remaining--
-    Setting.update({
-      time: global.remaining
-    }, {
-      where: {
-      id: 1
-    }})
   }, 1000)
 }
 

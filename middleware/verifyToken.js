@@ -6,7 +6,6 @@ const verifyToken = (req, res, next) => {
   if (token == null) return res.sendStatus(401)
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, async (err, decoded) => {
     if (err) return res.sendStatus(403)
-    console.log(decoded.id)
     const user = await User.findOne({
       where: {
         id: decoded.id
