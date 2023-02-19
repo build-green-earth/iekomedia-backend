@@ -5,7 +5,6 @@ const storage = multer.diskStorage({
     cb(null, './client/uploads')
   },
   filename: function (req, file, cb) {
-    console.log('here', req.user)
     cb(null, req.user.name+'.png')
   }
 })

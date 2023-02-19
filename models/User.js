@@ -3,37 +3,20 @@ const db = require("../config/database.js")
 
 const { DataTypes } = Sequelize.Sequelize
 
-const User = db.define('users', {
-  name: {
-    type: DataTypes.STRING
-  },
-  email: {
-    type: DataTypes.STRING
-  },
-  password: {
-    type: DataTypes.STRING
-  },
-  refreshToken: {
-    type: DataTypes.TEXT
-  },
-  role: {
-    type: DataTypes.STRING
-  },
-  location: {
-    type: DataTypes.STRING
-  },
-  factory: {
-    type: DataTypes.STRING
-  },
-  approved: {
-    type: DataTypes.BOOLEAN
-  },
-  admin: {
-    type: DataTypes.BOOLEAN
-  },
-  restrict: {
-    type: DataTypes.BOOLEAN
-  }
+const mongoose = require("mongoose")
+const Schema = mongoose.Schema
+
+const userSchema = new Schema({
+  name: String,
+  email: String,
+  password: String,
+  refreshToken: String,
+  role: String,
+  location: String,
+  factory: String,
+  approved: Boolean,
+  admin: Boolean,
+  restrict: Boolean
 })
 
-module.exports = User
+module.exports = mongoose.model("Users", userSchema)

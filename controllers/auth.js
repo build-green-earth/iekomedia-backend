@@ -10,14 +10,14 @@ const fs = require('fs')
 const register = async (req, res) => {
   const { username, email, password, confirmPassword, role, location } = req.body
 
-  let user = await User.findAll({
+  let user = await User.find({
     where: {
       email: req.body.email
     },
   });
   if (user.length) return res.status(400).json({msg: "Email already exists!"})
 
-  user = await User.findAll({
+  user = await User.find({
     where: {
       name: req.body.username
     },
@@ -43,10 +43,8 @@ const register = async (req, res) => {
 
 const login = async(req, res) => {
   try {
-    const user = await User.findAll({
-      where: {
-        email: req.body.email
-      },
+    const user = await User.find({
+      email: req.body.email
     });
     const match = await bcrypt.compare(req.body.password, user[0].password)
     if (!match) return res.status(400).json({msg: "Wrong Password"});
@@ -76,7 +74,7 @@ const logout = async (req, res) => {
   const refreshToken = req.cookies.refreshToken
   if (!refreshToken) return res.sendStatus(204)
 
-  const user = await User.findAll({
+  const user = await User.find({
     where: {
       refresh_token: refreshToken
     }
@@ -136,18 +134,21 @@ const allUsers = async (req, res) => {
     }
   }
 
-  users = await User.findAll({ attributes: ["id", "name", "email", "role", "approved", "createdAt", "location", "admin", "restrict", "factory"], 
-    where,
-    order: [
-      ['approved', 'ASC']
-    ]
-  })
+  try {
+    users = await User.find({ attributes: ["id", "name", "email", "role", "approved", "createdAt", "location", "admin", "restrict", "factory"], 
+      where,
+      order: [
+        ['approved', 'ASC']
+      ]
+    })  
+  } catch(err) { console.log(err) }
+  
   
   return res.json({users, isAdmin: req.user.admin})
 }
 
 const approveUser = async (req, res) => {
-  const user = await User.findAll({
+  const user = await User.find({
     where: {
       id: req.body.id
     }

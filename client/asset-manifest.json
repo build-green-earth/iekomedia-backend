@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.f8e4cfff.chunk.css",
-    "main.js": "/static/js/main.28f2ea76.chunk.js",
-    "main.js.map": "/static/js/main.28f2ea76.chunk.js.map",
+    "main.css": "/static/css/main.e3f069a0.chunk.css",
+    "main.js": "/static/js/main.ef604944.chunk.js",
+    "main.js.map": "/static/js/main.ef604944.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c1bdcca6.js",
     "runtime-main.js.map": "/static/js/runtime-main.c1bdcca6.js.map",
     "static/css/2.2ae0c192.chunk.css": "/static/css/2.2ae0c192.chunk.css",
-    "static/js/2.ecab0846.chunk.js": "/static/js/2.ecab0846.chunk.js",
-    "static/js/2.ecab0846.chunk.js.map": "/static/js/2.ecab0846.chunk.js.map",
+    "static/js/2.e482cc05.chunk.js": "/static/js/2.e482cc05.chunk.js",
+    "static/js/2.e482cc05.chunk.js.map": "/static/js/2.e482cc05.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.2ae0c192.chunk.css.map": "/static/css/2.2ae0c192.chunk.css.map",
-    "static/css/main.f8e4cfff.chunk.css.map": "/static/css/main.f8e4cfff.chunk.css.map",
-    "static/js/2.ecab0846.chunk.js.LICENSE.txt": "/static/js/2.ecab0846.chunk.js.LICENSE.txt",
+    "static/css/main.e3f069a0.chunk.css.map": "/static/css/main.e3f069a0.chunk.css.map",
+    "static/js/2.e482cc05.chunk.js.LICENSE.txt": "/static/js/2.e482cc05.chunk.js.LICENSE.txt",
     "static/media/bg.f066b4b1.jpg": "/static/media/bg.f066b4b1.jpg",
     "static/media/theme.scss": "/static/media/typicons.d45316f6.ttf",
     "static/media/error.ea336651.png": "/static/media/error.ea336651.png",
@@ -25,7 +25,7 @@
     "static/media/layout-1.624ded4a.jpg": "/static/media/layout-1.624ded4a.jpg",
     "static/media/layout-2.8582036f.jpg": "/static/media/layout-2.8582036f.jpg",
     "static/media/layout-3.6b1b041b.jpg": "/static/media/layout-3.6b1b041b.jpg",
-    "static/media/logo-dark.b7d1dd0d.png": "/static/media/logo-dark.b7d1dd0d.png",
+    "static/media/logo-dark.d47f55d9.png": "/static/media/logo-dark.d47f55d9.png",
     "static/media/logo-light.1ddaa96c.png": "/static/media/logo-light.1ddaa96c.png",
     "static/media/maintenance.619ab737.png": "/static/media/maintenance.619ab737.png",
     "static/media/slider-image-1.45d25471.jpg": "/static/media/slider-image-1.45d25471.jpg",
@@ -46,8 +46,8 @@
   "entrypoints": [
     "static/js/runtime-main.c1bdcca6.js",
     "static/css/2.2ae0c192.chunk.css",
-    "static/js/2.ecab0846.chunk.js",
-    "static/css/main.f8e4cfff.chunk.css",
-    "static/js/main.28f2ea76.chunk.js"
+    "static/js/2.e482cc05.chunk.js",
+    "static/css/main.e3f069a0.chunk.css",
+    "static/js/main.ef604944.chunk.js"
   ]
 }
