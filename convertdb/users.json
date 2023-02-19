@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "63eb72e3e91654f337275cf6"
+  },
+  "name": "Admin",
+  "email": "Admin@iekomedia.com",
+  "password": "$2b$10$4N6chax4APGBdd9vzo/b0ecnt3pMfeCICzkstWNIkKsoYZlSIm12K",
+  "role": "Admin",
+  "approved": 1,
+  "location": "Seguin",
+  "restrict": 0,
+  "admin": 1,
+  "factory": ""
+},{
+  "_id": {
+    "$oid": "63f2022f94fed1ddb8109b3e"
+  },
+  "name": "Roky Lorenz",
+  "email": "rokylorenz@apms.com",
+  "password": "$2b$10$23AozuUHjcIBlLBwGKGv3erW9uaBPCZiGtlHT5kWA6T2QHotpsvtG",
+  "role": "Admin",
+  "__v": 0,
+  "admin": true,
+  "approved": true,
+  "factory": "",
+  "location": "Seguin",
+  "restrict": false
+}]
