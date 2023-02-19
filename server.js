@@ -29,6 +29,5 @@ app.use(router)
 // readPartFile()
 // readMachineFile()
 // readTimerFile()
-console.log(getCurrentTime())
 
 app.listen(port, () => { console.log(`server running at port ${port}`) })
