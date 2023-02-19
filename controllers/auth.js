@@ -11,16 +11,12 @@ const register = async (req, res) => {
   const { username, email, password, confirmPassword, role, location } = req.body
 
   let user = await User.find({
-    where: {
-      email: req.body.email
-    },
+    email: req.body.email
   });
   if (user.length) return res.status(400).json({msg: "Email already exists!"})
 
   user = await User.find({
-    where: {
-      name: req.body.username
-    },
+    name: req.body.username
   });
   if (user.length) return res.status(400).json({msg: "Username already exists!"})
 
