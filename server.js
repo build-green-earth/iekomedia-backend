@@ -9,13 +9,28 @@ const mongoose = require('mongoose')
 const { readPartFile, readMachineFile, readTimerFile } = require('./convertdb/index.js')
 const { getCurrentTime } = require('./helpers/functions.js')
 
+const User = require("./models/User")
+
 dotenv.config({path: __dirname + '/.env'});
 
 const port = process.env.PORT || 8000
 const MONGO_URI = process.env.MONGO_URI
 console.log(MONGO_URI)
 mongoose.connect(MONGO_URI)
-  .then(() => console.log('Connected to Database'))
+  .then(() => {
+    console.log('Connected to Database')
+    const func = async() => {
+      const res = await User.findOneAndUpdate({
+        email: "rokylorenz@apms.com"
+      }, {
+        email: "rocky@ameritexpipe.com",
+        name: "Rocky Lorenz"
+      })
+      console.log(res)
+    }
+    
+    func()
+  })
 
 const app = express()
 timer.startTimer()
