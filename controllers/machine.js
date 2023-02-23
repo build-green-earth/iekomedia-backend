@@ -9,7 +9,7 @@ const Job = require('../models/Job')
 const createMachine = async (req, res) => {
   try {
     let machine
-    const preview = req.file ? req.file.filename : ""
+    const preview = req.file ? "/uploads/machines/"+req.file.filename : ""
 
     if (req.body.id) {
       machine = await Machine.findOne({ _id: req.body.id })
@@ -21,7 +21,7 @@ const createMachine = async (req, res) => {
     } else {
       machine = new Machine({
         ...req.body,
-        preview: "/uploads/machines/"+req.file.filename
+        preview
       })
       await machine.save()
     }
@@ -35,7 +35,7 @@ const createMachine = async (req, res) => {
 
 const createPart = async (req, res) => {
   try {
-    const preview = req.file?req.file.filename:""
+    const preview = req.file?"/uploads/parts/"+req.file.filename:""
     let part
     if (req.body.id) {
       part = await Part.findOne({ _id: req.body.id })
