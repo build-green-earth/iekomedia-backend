@@ -23,10 +23,9 @@ const createMachine = async (req, res) => {
         ...req.body,
         preview: "/uploads/machines/"+req.file.filename
       })
-      await part.save()
+      await machine.save()
     }
     
-    await machine.save()
     return res.send({machine})
   } catch (err) {
     console.log(err)
@@ -55,6 +54,7 @@ const createPart = async (req, res) => {
     
     return res.sendStatus(200)
   } catch (err) {
+    console.log(err)
     res.sendStatus(500)
   }
 }
