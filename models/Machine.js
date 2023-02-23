@@ -9,7 +9,8 @@ const machineSchema = new Schema({
   preview: String,
   weight: Number,
   productionTime: Number,
-  preview: String
+  preview: String,
+  machineClass: String
 }, {
   timestamps: true
 })

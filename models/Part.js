@@ -12,6 +12,7 @@ const partSchema = new Schema({
   finishGoodWeight: Number,
   cageWeightScrap: Number,
   caseWeightActuals: Number,
+  machineClass: String,
   preview: String
 }, {
   timestamps: true

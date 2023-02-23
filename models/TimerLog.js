@@ -6,6 +6,10 @@ const timerLogSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Timers"
   },
+  part: {
+    type: Schema.Types.ObjectId,
+    ref: "Parts"
+  },
   startTime: Date,
   endTime: Date,
   weight: Number,

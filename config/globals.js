@@ -17,4 +17,13 @@ const status = [
   "Pending",
 ]
 
-module.exports = { factories, cities, status }
+const machineClasses = [
+  "Radial Press",
+  "Variant Perfect",
+  "System",
+  "Blizzard",
+  "Tornado",
+  "Steel",
+]
+
+module.exports = { factories, cities, status, machineClasses }

@@ -21,4 +21,16 @@ const getCurrentTime = () => {
   return new Date()
 }
 
-module.exports = { random, getModel, getCurrentTime }
+const getPeriodOfTimer = (times) => {
+  let total = 0
+  times.forEach(time => {
+    total += ((new Date(time.endTime).getTime() - new Date(time.startTime).getTime()) / 1000)
+  })
+  return total
+}
+
+const paginate = (models, page, items_per_page) => {
+  return models.slice((page - 1) * items_per_page, page * items_per_page)
+}
+
+module.exports = { random, getModel, getCurrentTime, getPeriodOfTimer, paginate }
