@@ -11,9 +11,13 @@ const mongoose = require('mongoose')
 const socketIO = require('socket.io')
 const io = socketIO(server, {
   cors: {
-      origin: "*"
-  }
+    orgin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+    optionSuccessStatus: 204,
+  },
 });
+
 const { readPartFile, readMachineFile, readTimerFile, readJobFile } = require('./convertdb/index.js')
 const { socketMiddleware } = require('./middleware/socket.js')
 
@@ -40,3 +44,7 @@ app.use(router)
 // readJobFile()
 
 server.listen(port, () => { console.log(`server running at port ${port}`) })
+
+io.on("connection", (socket) => {
+  console.log("new connection")
+})
