@@ -11,7 +11,7 @@ const partSchema = new Schema({
   productionTime: Number,
   finishGoodWeight: Number,
   cageWeightScrap: Number,
-  caseWeightActuals: Number,
+  cageWeightActuals: Number,
   machineClass: String,
   preview: String
 }, {

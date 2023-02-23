@@ -8,10 +8,24 @@ const Job = require('../models/Job')
 
 const createMachine = async (req, res) => {
   try {
-    const machine = new Machine({
-      ...req.body,
-      preview: "/uploads/machines/"+req.file.filename
-    })
+    let machine
+    const preview = req.file ? req.file.filename : ""
+
+    if (req.body.id) {
+      machine = await Machine.findOne({ _id: req.body.id })
+      Object.entries(req.body).forEach(v => {
+        machine[v[0]] = v[1]
+      })
+      machine.preview = preview ? preview : machine.pewview
+      await machine.save()
+    } else {
+      machine = new Machine({
+        ...req.body,
+        preview: "/uploads/machines/"+req.file.filename
+      })
+      await part.save()
+    }
+    
     await machine.save()
     return res.send({machine})
   } catch (err) {
@@ -23,12 +37,23 @@ const createMachine = async (req, res) => {
 const createPart = async (req, res) => {
   try {
     const preview = req.file?req.file.filename:""
-    const part = new Part({
-      ...req.body,
-      preview
-    })
-    await part.save()
-    return res.send({part})
+    let part
+    if (req.body.id) {
+      part = await Part.findOne({ _id: req.body.id })
+      Object.entries(req.body).forEach(v => {
+        part[v[0]] = v[1]
+      })
+      part.preview = preview ? preview : part.pewview
+      await part.save()
+    } else {
+      part = new Part({
+        ...req.body,
+        preview
+      })
+      await part.save()
+    }
+    
+    return res.sendStatus(200)
   } catch (err) {
     res.sendStatus(500)
   }
