@@ -372,18 +372,29 @@ const getTimerLogsOfMachine = async (req, res) => {
     const page = req.query.page || 1
 
     const { machine, part, from, to } = req.query
-    let _logs = await TimerLog.find({
-      createdAt: {
-        $gte: new Date(from),
-        $lt: new Date(to)
-      },
-    }).populate("timer")
-      .populate({ path: "timer", populate: { path: "part" } })
-      .sort({ createdAt: -1 })
-      .lean()
+    let _logs
+    if (from && to)
+      _logs = await TimerLog.find({
+        createdAt: {
+          $gte: new Date(from),
+          $lt: new Date(to)
+        },
+      }).populate("timer")
+        .populate({ path: "timer", populate: { path: "part" } })
+        .sort({ createdAt: -1 })
+        .lean()
+    else
+      _logs = await TimerLog.find({}).populate("timer")
+        .populate({ path: "timer", populate: { path: "part" } })
+        .sort({ createdAt: -1 })
+        .lean()
     let totalTons = 0, totalGain = 0, totalLoss = 0, totalFloat = 0
     const logs = _logs
-      .filter(log => log.timer.part._id == part && log.timer.machine == machine)
+      .filter(log => {
+        if (part && log.timer.part._id != part) return false
+        if (machine && log.timer.machine != machine) return false
+        return true
+      })
       .map(log => {
         const time = getPeriodOfTimer(log.times)
         totalTons += log.timer.weight
@@ -403,6 +414,7 @@ const getTimerLogsOfMachine = async (req, res) => {
       totalGain
     })
   } catch (err) {
+    console.log(err)
     res.sendStatus(500)
   }
 }
