@@ -400,7 +400,7 @@ const getTimerLogsOfMachine = async (req, res) => {
         .lean()
     else
       _logs = await TimerLog.find({
-
+        machine
       }).populate("timer")
         .populate({ path: "timer", populate: { path: "part" } })
         .sort({ createdAt: -1 })
