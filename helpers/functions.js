@@ -30,6 +30,7 @@ const getPeriodOfTimer = (times) => {
 }
 
 const paginate = (models, page, items_per_page) => {
+  if (page == -1) return models
   return models.slice((page - 1) * items_per_page, page * items_per_page)
 }
 

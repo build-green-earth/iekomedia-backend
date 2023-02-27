@@ -19,6 +19,7 @@ const timerSchema = new Schema({
     type: String,
     default: "Pending"
   },
+  operator: String,
   times: [
     {
       startTime: {

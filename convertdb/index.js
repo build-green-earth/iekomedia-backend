@@ -21,12 +21,13 @@ const readPartFile = async () => {
   readExcel("./convertdb/parts.xlsx").then(async (data) => {
     for (row of data) {
       if (row[0] == "id") continue
+      
       const part = new Part({
         city: cities[row[2] - 1],
         factory: "",
         name: row[1],
-        pounds: parseInt(row[6]),
-        avgTime: parseInt(row[7]) * 60,
+        pounds: parseInt(row[6])||0,
+        avgTime: (parseInt(row[7]) * 60) || 0,
         finishGoodWeight: checkIfNull(row[9]),
         caseWeightActuals: checkIfNull(row[10]),
         caseWeightActuals: checkIfNull(row[11]),
@@ -105,8 +106,10 @@ const readMachineFile = async () => {
 }
 
 const readTimerFile = async () => {
-  const machines = await Machine.find({})
-  const parts = await Part.find({})
+
+  const parts = await readExcel("./convertdb/parts.xlsx")
+  const machines = await readExcel("./convertdb/machines.xlsx")
+
   await Timer.deleteMany({})
   const stream = await getXlsxStream({
     filePath: "./convertdb/timers.xlsx",
