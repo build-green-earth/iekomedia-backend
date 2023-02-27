@@ -48,7 +48,7 @@ const login = async(req, res) => {
 
     const { id, firstName, lastName, email, role, approved } = user[0]
     const accessToken = jwt.sign({ id, firstName, lastName, email, role, approved }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1d' })
-    const refreshToken = jwt.sign({ id, firstName, lastName, email, role, approved }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '1d' })
+    const refreshToken = jwt.sign({ id, firstName,  lastName, email, role, approved }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '1d' })
     
     await User.update({ refresh_token: refreshToken }, {
       where: {

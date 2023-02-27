@@ -6,6 +6,8 @@ const Timer = require('../models/Timer')
 const TimerLog = require('../models/TimerLog')
 const Job = require('../models/Job')
 
+const moment=require("moment")
+
 const createMachine = async (req, res) => {
   try {
     let machine
@@ -293,7 +295,7 @@ const endTimer = async (req, res) => {
         startTime: timer.times[0].startTime,
         endTime: now,
         productionTime: timer.productionTime,
-        weight: timer.productionTime,
+        weight: timer.weight,
         times: timer.times,
         part: timer.part,
         operator: timer.operator
@@ -382,29 +384,25 @@ const searchMachines = async (req, res) => {
 const getTimerLogsOfMachine = async (req, res) => {
 
   const ITEMS_PER_PAGE = 8
+  const today = moment().startOf('day')
 
   try {
     const page = req.query.page || 1
 
-    const { machine, part, from, to } = req.query
+    let { machine, part, from, to } = req.query
     let _logs
-    if (from && to)
-      _logs = await TimerLog.find({
-        createdAt: {
-          $gte: new Date(from),
-          $lt: new Date(to)
-        },
-      }).populate("timer")
-        .populate({ path: "timer", populate: { path: "part" } })
-        .sort({ createdAt: -1 })
-        .lean()
-    else
-      _logs = await TimerLog.find({
-        machine
-      }).populate("timer")
-        .populate({ path: "timer", populate: { path: "part" } })
-        .sort({ createdAt: -1 })
-        .lean()
+
+    if (!from) from = today.toDate()
+    if (!to) to = moment(today).endOf('day').toDate()
+    _logs = await TimerLog.find({
+      createdAt: {
+        $gte: new Date(from),
+        $lt: new Date(to)
+      },
+    }).populate("timer")
+      .populate({ path: "timer", populate: { path: "part" } })
+      .sort({ createdAt: -1 })
+      .lean()
     let totalTons = 0, totalGain = 0, totalLoss = 0, totalFloat = 0
     const logs = _logs
       .filter(log => {
@@ -427,8 +425,8 @@ const getTimerLogsOfMachine = async (req, res) => {
       logs: logs.slice(((page - 1) * ITEMS_PER_PAGE), page * ITEMS_PER_PAGE), 
       total: logs.length, 
       totalTons,
-      totalLoss,
-      totalGain
+      totalLoss: totalLoss / logs.length,
+      totalGain: totalGain / logs.length
     })
   } catch (err) {
     console.log(err)
