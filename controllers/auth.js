@@ -46,9 +46,9 @@ const login = async(req, res) => {
     if (!match) return res.status(400).json({msg: "Wrong Password"});
     if (!user[0].approved) return res.status(403).json({msg: "Your account is under review"})
 
-    const { id, name, email, role, approved } = user[0]
-    const accessToken = jwt.sign({ id, name, email, role, approved }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1d' })
-    const refreshToken = jwt.sign({ id, name, email, role, approved }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '1d' })
+    const { id, firstName, lastName, email, role, approved } = user[0]
+    const accessToken = jwt.sign({ id, firstName, email, role, approved }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1d' })
+    const refreshToken = jwt.sign({ id, lastName, email, role, approved }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '1d' })
     
     await User.update({ refresh_token: refreshToken }, {
       where: {
