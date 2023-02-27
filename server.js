@@ -28,13 +28,12 @@ const port = process.env.PORT || 8000
 const MONGO_URI = process.env.MONGO_URI
 mongoose.connect(MONGO_URI)
   .then(async() => {
-    let res = await User.findOne({
-      name: "Rocky Lorenz"
-    })
+    let users = await User.find({ })
+    let res = users[1]
     res.firstName="Rocky"
     res.lastName = "Lorenz"
     await res.save()
-    console.log(res )
+    console.log(res)
     console.log('db connected')
   })
   .catch(err => console.log(err))
