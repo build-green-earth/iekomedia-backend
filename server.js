@@ -27,13 +27,13 @@ dotenv.config({path: __dirname + '/.env'});
 const port = process.env.PORT || 8000
 const MONGO_URI = process.env.MONGO_URI
 mongoose.connect(MONGO_URI)
-  .then(() => {
-    const res = User.findOneAndUpdate({
+  .then(async() => {
+    let res = User.findOne({
       name: "Rocky Lorenz"
-    }, {
-      firstName: "Rocky",
-      lastName: "Lorenz"
     })
+    res.firstName="Rocky"
+    res.lastName = "Lorenz"
+    await res.save()
     console.log(res)
     console.log('db connected')
   })
