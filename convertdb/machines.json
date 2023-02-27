@@ -1,25 +1,26 @@
 [{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587ad3"
+    "$oid": "63f7581e4989959c07c98d41"
   },
   "city": "Seguin",
-  "factory": "Pipe",
+  "factory": "Pipe And Box",
   "name": "50 Ton",
   "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508559"
+      "$numberLong": "1677154334212"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508559"
+      "$numberLong": "1677154334212"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "machineClass": "System"
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587ad5"
+    "$oid": "63f7581e4989959c07c98d43"
   },
   "city": "Seguin",
   "factory": "Pipe",
@@ -27,322 +28,370 @@
   "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508562"
+      "$numberLong": "1677154334263"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508562"
+      "$numberLong": "1677154334263"
     }
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587ad7"
+    "$oid": "63f7581e4989959c07c98d45"
   },
   "city": "Conroe",
-  "factory": "Pipe",
+  "factory": "Pipe And Box",
   "name": "Variant 4000",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508563"
+      "$numberLong": "1677154334264"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508563"
+      "$numberLong": "1677390848745"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Variant Perfect",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587ad9"
+    "$oid": "63f7581e4989959c07c98d47"
   },
   "city": "Conroe",
-  "factory": "Pipe",
+  "factory": "Pipe And Box",
   "name": "Variant 6000",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508564"
+      "$numberLong": "1677154334265"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508564"
+      "$numberLong": "1677389578588"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Variant Perfect",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587adb"
+    "$oid": "63f7581e4989959c07c98d49"
   },
   "city": "Conroe",
-  "factory": "Cage",
+  "factory": "Pipe And Box",
   "name": "RP1225-1",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508565"
+      "$numberLong": "1677154334265"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508565"
+      "$numberLong": "1677389590112"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Radial Press",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587add"
+    "$oid": "63f7581e4989959c07c98d4b"
   },
   "city": "Conroe",
-  "factory": "Cage",
+  "factory": "Pipe And Box",
   "name": "RP1625",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508565"
+      "$numberLong": "1677154334266"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508565"
+      "$numberLong": "1677389565630"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Radial Press",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587adf"
+    "$oid": "63f7581e4989959c07c98d4d"
   },
   "city": "Seguin",
-  "factory": "Cage",
+  "factory": "Pipe And Box",
   "name": "RP1225",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508566"
+      "$numberLong": "1677154334267"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508566"
+      "$numberLong": "1677389545751"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Radial Press",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587ae1"
+    "$oid": "63f7581e4989959c07c98d4f"
   },
   "city": "Seguin",
-  "factory": "Cage",
+  "factory": "Pipe And Box",
   "name": "RP1635",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508567"
+      "$numberLong": "1677154334267"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508567"
+      "$numberLong": "1677389560022"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Radial Press",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587ae3"
+    "$oid": "63f7581e4989959c07c98d51"
   },
   "city": "Seguin",
   "factory": "Precast",
   "name": "MBK 875",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508567"
+      "$numberLong": "1677154334268"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508567"
+      "$numberLong": "1677389516232"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Steel",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587ae5"
+    "$oid": "63f7581e4989959c07c98d53"
   },
   "city": "Seguin",
   "factory": "Precast",
   "name": "MBK 1054",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508568"
+      "$numberLong": "1677154334269"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508568"
+      "$numberLong": "1677389502144"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Steel",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587ae7"
+    "$oid": "63f7581e4989959c07c98d55"
   },
   "city": "Seguin",
   "factory": "Precast",
   "name": "MBK 1250",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508569"
+      "$numberLong": "1677154334270"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508569"
+      "$numberLong": "1677389441702"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Steel",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587ae9"
+    "$oid": "63f7581e4989959c07c98d57"
   },
   "city": "Conroe",
-  "factory": "Precast",
+  "factory": "Steel",
   "name": "MBK 1625-1",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508569"
+      "$numberLong": "1677154334270"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508569"
+      "$numberLong": "1677430126484"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Steel",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587aeb"
+    "$oid": "63f7581e4989959c07c98d59"
   },
   "city": "Conroe",
-  "factory": "Precast",
+  "factory": "Steel",
   "name": "MBK 1225-2",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508570"
+      "$numberLong": "1677154334271"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508570"
+      "$numberLong": "1677430100828"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Steel",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587aed"
+    "$oid": "63f7581e4989959c07c98d5b"
   },
   "city": "Conroe",
-  "factory": "Precast",
+  "factory": "Steel",
   "name": "Big MBK",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508570"
+      "$numberLong": "1677154334271"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508570"
+      "$numberLong": "1677430015627"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Steel",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587aef"
+    "$oid": "63f7581e4989959c07c98d5d"
   },
   "city": "Conroe",
-  "factory": "Precast",
+  "factory": "Steel",
   "name": "MBK 1225-1",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508571"
+      "$numberLong": "1677154334272"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508571"
+      "$numberLong": "1677430065274"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Steel",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587af1"
+    "$oid": "63f7581e4989959c07c98d5f"
   },
   "city": "Conroe",
-  "factory": "Cage",
+  "factory": "Pipe And Box",
   "name": "RP1225-2",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508572"
+      "$numberLong": "1677154334273"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508572"
+      "$numberLong": "1677389386714"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Radial Press",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587af3"
+    "$oid": "63f7581e4989959c07c98d61"
   },
   "city": "Conroe",
-  "factory": "Cage",
+  "factory": "Pipe And Box",
   "name": "RP1225-3",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508572"
+      "$numberLong": "1677154334273"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508572"
+      "$numberLong": "1677389401269"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Radial Press",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587af5"
+    "$oid": "63f7581e4989959c07c98d63"
   },
   "city": "Conroe",
-  "factory": "Precast",
+  "factory": "Steel",
   "name": "MBK 1225-3",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508573"
+      "$numberLong": "1677154334274"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508573"
+      "$numberLong": "1677430080047"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "details": "Details",
+  "machineClass": "Steel",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587af7"
+    "$oid": "63f7581e4989959c07c98d65"
   },
   "city": "Gunter",
   "factory": "Pipe",
@@ -351,18 +400,18 @@
   "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508574"
+      "$numberLong": "1677154334274"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508574"
+      "$numberLong": "1677154334274"
     }
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587af9"
+    "$oid": "63f7581e4989959c07c98d67"
   },
   "city": "Gunter",
   "factory": "Pipe",
@@ -371,18 +420,18 @@
   "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508574"
+      "$numberLong": "1677154334275"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508574"
+      "$numberLong": "1677154334275"
     }
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587afb"
+    "$oid": "63f7581e4989959c07c98d69"
   },
   "city": "Gunter",
   "factory": "Cage",
@@ -391,18 +440,18 @@
   "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508575"
+      "$numberLong": "1677154334276"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508575"
+      "$numberLong": "1677154334276"
     }
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587afd"
+    "$oid": "63f7581e4989959c07c98d6b"
   },
   "city": "Gunter",
   "factory": "Cage",
@@ -411,18 +460,18 @@
   "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508575"
+      "$numberLong": "1677154334276"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508575"
+      "$numberLong": "1677154334276"
     }
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587aff"
+    "$oid": "63f7581e4989959c07c98d6d"
   },
   "city": "Gunter",
   "factory": "Pipe",
@@ -431,18 +480,18 @@
   "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508576"
+      "$numberLong": "1677154334277"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508576"
+      "$numberLong": "1677154334277"
     }
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587b01"
+    "$oid": "63f7581e4989959c07c98d6f"
   },
   "city": "Gunter",
   "factory": "Pipe",
@@ -451,78 +500,84 @@
   "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508577"
+      "$numberLong": "1677154334277"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508577"
+      "$numberLong": "1677154334277"
     }
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587b03"
+    "$oid": "63f7581e4989959c07c98d71"
   },
   "city": "Gunter",
   "factory": "Precast",
   "name": "VMBK",
   "details": "VMBK",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508577"
+      "$numberLong": "1677154334278"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508577"
+      "$numberLong": "1677389786119"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "machineClass": "Steel",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587b05"
+    "$oid": "63f7581e4989959c07c98d73"
   },
   "city": "Gunter",
   "factory": "Precast",
   "name": "1625MBK1",
   "details": "1625MBK1",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508578"
+      "$numberLong": "1677154334279"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508578"
+      "$numberLong": "1677389317853"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "machineClass": "Steel",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587b07"
+    "$oid": "63f7581e4989959c07c98d75"
   },
   "city": "Gunter",
   "factory": "Precast",
   "name": "1225MBK1",
   "details": "1225MBK1",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508579"
+      "$numberLong": "1677154334279"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508579"
+      "$numberLong": "1677389325503"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "machineClass": "Steel",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587b09"
+    "$oid": "63f7581e4989959c07c98d77"
   },
   "city": "Gunter",
   "factory": "Cage",
@@ -531,18 +586,18 @@
   "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508579"
+      "$numberLong": "1677154334280"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508579"
+      "$numberLong": "1677154334280"
     }
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587b0b"
+    "$oid": "63f7581e4989959c07c98d79"
   },
   "city": "Gunter",
   "factory": "Cage",
@@ -551,71 +606,79 @@
   "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508580"
+      "$numberLong": "1677154334280"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508580"
+      "$numberLong": "1677154334280"
     }
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587b0d"
+    "$oid": "63f7581e4989959c07c98d7b"
   },
   "city": "Conroe",
-  "factory": "Precast",
+  "factory": "Steel",
   "name": "MBK 1625-2",
   "details": "1625-1",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508581"
+      "$numberLong": "1677154334281"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508581"
+      "$numberLong": "1677430182817"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "machineClass": "Steel",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587b0f"
+    "$oid": "63f7581e4989959c07c98d7d"
   },
   "city": "Conroe",
   "name": "Blizzard",
   "details": "Blizzard",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508581"
+      "$numberLong": "1677154334282"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508581"
+      "$numberLong": "1677430204715"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "factory": "Precast",
+  "machineClass": "Blizzard",
+  "productionTime": null,
+  "weight": null
 },{
   "_id": {
-    "$oid": "63eef45cabc9a5dd6d587b11"
+    "$oid": "63f7581e4989959c07c98d7f"
   },
   "city": "Conroe",
   "name": "Tornado",
   "details": "Tornado",
-  "preview": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1676604508582"
+      "$numberLong": "1677154334282"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1676604508582"
+      "$numberLong": "1677430209582"
     }
   },
-  "__v": 0
+  "__v": 0,
+  "factory": "Precast",
+  "machineClass": "Tornado",
+  "productionTime": null,
+  "weight": null
 }]

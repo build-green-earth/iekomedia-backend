@@ -1,0 +1,380 @@
+[{
+  "_id": {
+    "$oid": "63fab85c1b4999232995b350"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d49"
+  },
+  "__v": 14,
+  "city": "Conroe",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677375580223"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadabbed382d6da20028f"
+  },
+  "productionTime": 60,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677484004761"
+    }
+  },
+  "weight": 2690,
+  "operator": "asdasd"
+},{
+  "_id": {
+    "$oid": "63fab8701b4999232995b36d"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d5f"
+  },
+  "__v": 14,
+  "city": "Conroe",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677375600674"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadabbed382d6da2002ad"
+  },
+  "productionTime": 120,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677484004768"
+    }
+  },
+  "weight": 4731
+},{
+  "_id": {
+    "$oid": "63fab8851b4999232995b389"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d61"
+  },
+  "__v": 14,
+  "city": "Conroe",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677375621598"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadabbed382d6da20029d"
+  },
+  "productionTime": 120,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677484004776"
+    }
+  },
+  "weight": 3436
+},{
+  "_id": {
+    "$oid": "63fab8951b4999232995b3a0"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d4b"
+  },
+  "__v": 14,
+  "city": "Conroe",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677375637243"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadabbed382d6da2002d7"
+  },
+  "productionTime": 360,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677484004782"
+    }
+  },
+  "weight": 8678
+},{
+  "_id": {
+    "$oid": "63fab8a51b4999232995b3b8"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d45"
+  },
+  "__v": 14,
+  "city": "Conroe",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677375653674"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadabbed382d6da200c83"
+  },
+  "productionTime": 780,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677484004790"
+    }
+  },
+  "weight": 23728
+},{
+  "_id": {
+    "$oid": "63fab8b31b4999232995b3cc"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d47"
+  },
+  "__v": 18,
+  "city": "Conroe",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677375667827"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadacbed382d6da20146b"
+  },
+  "productionTime": 1200,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677484004796"
+    }
+  },
+  "weight": 46800
+},{
+  "_id": {
+    "$oid": "63fab9051b4999232995b49b"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d5b"
+  },
+  "__v": 14,
+  "city": "Conroe",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677375749717"
+    }
+  },
+  "factory": "Steel",
+  "part": {
+    "$oid": "63faadabbed382d6da20024f"
+  },
+  "productionTime": 660,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677484004806"
+    }
+  },
+  "weight": 16140
+},{
+  "_id": {
+    "$oid": "63fab9141b4999232995b4b2"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d5d"
+  },
+  "__v": 14,
+  "city": "Conroe",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677375764958"
+    }
+  },
+  "factory": "Steel",
+  "part": {
+    "$oid": "63faadabbed382d6da20028f"
+  },
+  "productionTime": 60,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677484004813"
+    }
+  },
+  "weight": 2690
+},{
+  "_id": {
+    "$oid": "63fab9211b4999232995b4c6"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d59"
+  },
+  "__v": 14,
+  "city": "Conroe",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677375777541"
+    }
+  },
+  "factory": "Steel",
+  "part": {
+    "$oid": "63faadabbed382d6da2002bf"
+  },
+  "productionTime": 180,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677484004820"
+    }
+  },
+  "weight": 7080
+},{
+  "_id": {
+    "$oid": "63fab92e1b4999232995b4db"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d63"
+  },
+  "__v": 14,
+  "city": "Conroe",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677375790788"
+    }
+  },
+  "factory": "Steel",
+  "part": {
+    "$oid": "63faadabbed382d6da20029d"
+  },
+  "productionTime": 120,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677484004827"
+    }
+  },
+  "weight": 3436
+},{
+  "_id": {
+    "$oid": "63fab9401b4999232995b4f6"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d57"
+  },
+  "__v": 14,
+  "city": "Conroe",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677375808158"
+    }
+  },
+  "factory": "Steel",
+  "part": {
+    "$oid": "63faadabbed382d6da2002e9"
+  },
+  "productionTime": 180,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677484004835"
+    }
+  },
+  "weight": 11176
+},{
+  "_id": {
+    "$oid": "63fab9591b4999232995b519"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d7b"
+  },
+  "__v": 14,
+  "city": "Conroe",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677375833115"
+    }
+  },
+  "factory": "Steel",
+  "part": {
+    "$oid": "63faadabbed382d6da200eeb"
+  },
+  "productionTime": 0,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677484004842"
+    }
+  },
+  "weight": 7326
+},{
+  "_id": {
+    "$oid": "63fab96a1b4999232995b538"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d7d"
+  },
+  "__v": 14,
+  "city": "Conroe",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677375850658"
+    }
+  },
+  "factory": "Precast",
+  "part": {
+    "$oid": "63faadacbed382d6da201c6d"
+  },
+  "productionTime": 0,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677484004849"
+    }
+  },
+  "weight": 1950
+},{
+  "_id": {
+    "$oid": "63fab9741b4999232995b548"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d7f"
+  },
+  "__v": 14,
+  "city": "Conroe",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677375860009"
+    }
+  },
+  "factory": "Precast",
+  "part": {
+    "$oid": "63faadacbed382d6da201b43"
+  },
+  "productionTime": 240,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677484004856"
+    }
+  },
+  "weight": 1671
+}]
