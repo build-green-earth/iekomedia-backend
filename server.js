@@ -28,12 +28,13 @@ const port = process.env.PORT || 8000
 const MONGO_URI = process.env.MONGO_URI
 mongoose.connect(MONGO_URI)
   .then(() => {
-    User.findOneAndUpdate({
+    const res = User.findOneAndUpdate({
       name: "Rocky Lorenz"
     }, {
       firstName: "Rocky",
       lastName: "Lorenz"
     })
+    console.log(res)
     console.log('db connected')
   })
   .catch(err => console.log(err))
