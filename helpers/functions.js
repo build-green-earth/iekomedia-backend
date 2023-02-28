@@ -15,7 +15,6 @@ const getModel = (str) => {
 
 const getCurrentTime = () => {
   const now = new Date()
-  console.log('here', now)
   const time = new Date(now.getTime() + now.getTimezoneOffset() * 60 * 1000)
   const offset = -6 * 60 * 60 * 1000
   return new Date()

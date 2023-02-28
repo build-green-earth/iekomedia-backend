@@ -5,7 +5,7 @@
   "machine": {
     "$oid": "63f7581e4989959c07c98d49"
   },
-  "__v": 14,
+  "__v": 18,
   "city": "Conroe",
   "createdAt": {
     "$date": {
@@ -21,7 +21,7 @@
   "times": [],
   "updatedAt": {
     "$date": {
-      "$numberLong": "1677484004761"
+      "$numberLong": "1677519469372"
     }
   },
   "weight": 2690,
@@ -33,7 +33,7 @@
   "machine": {
     "$oid": "63f7581e4989959c07c98d5f"
   },
-  "__v": 14,
+  "__v": 18,
   "city": "Conroe",
   "createdAt": {
     "$date": {
@@ -49,7 +49,7 @@
   "times": [],
   "updatedAt": {
     "$date": {
-      "$numberLong": "1677484004768"
+      "$numberLong": "1677519469380"
     }
   },
   "weight": 4731
@@ -60,7 +60,7 @@
   "machine": {
     "$oid": "63f7581e4989959c07c98d61"
   },
-  "__v": 14,
+  "__v": 40,
   "city": "Conroe",
   "createdAt": {
     "$date": {
@@ -76,7 +76,7 @@
   "times": [],
   "updatedAt": {
     "$date": {
-      "$numberLong": "1677484004776"
+      "$numberLong": "1677611126903"
     }
   },
   "weight": 3436
@@ -87,7 +87,7 @@
   "machine": {
     "$oid": "63f7581e4989959c07c98d4b"
   },
-  "__v": 14,
+  "__v": 18,
   "city": "Conroe",
   "createdAt": {
     "$date": {
@@ -103,7 +103,7 @@
   "times": [],
   "updatedAt": {
     "$date": {
-      "$numberLong": "1677484004782"
+      "$numberLong": "1677519469395"
     }
   },
   "weight": 8678
@@ -114,7 +114,7 @@
   "machine": {
     "$oid": "63f7581e4989959c07c98d45"
   },
-  "__v": 14,
+  "__v": 18,
   "city": "Conroe",
   "createdAt": {
     "$date": {
@@ -130,7 +130,7 @@
   "times": [],
   "updatedAt": {
     "$date": {
-      "$numberLong": "1677484004790"
+      "$numberLong": "1677519469403"
     }
   },
   "weight": 23728
@@ -141,7 +141,7 @@
   "machine": {
     "$oid": "63f7581e4989959c07c98d47"
   },
-  "__v": 18,
+  "__v": 22,
   "city": "Conroe",
   "createdAt": {
     "$date": {
@@ -157,7 +157,7 @@
   "times": [],
   "updatedAt": {
     "$date": {
-      "$numberLong": "1677484004796"
+      "$numberLong": "1677519469412"
     }
   },
   "weight": 46800
@@ -168,7 +168,7 @@
   "machine": {
     "$oid": "63f7581e4989959c07c98d5b"
   },
-  "__v": 14,
+  "__v": 18,
   "city": "Conroe",
   "createdAt": {
     "$date": {
@@ -184,7 +184,7 @@
   "times": [],
   "updatedAt": {
     "$date": {
-      "$numberLong": "1677484004806"
+      "$numberLong": "1677519469421"
     }
   },
   "weight": 16140
@@ -195,7 +195,7 @@
   "machine": {
     "$oid": "63f7581e4989959c07c98d5d"
   },
-  "__v": 14,
+  "__v": 18,
   "city": "Conroe",
   "createdAt": {
     "$date": {
@@ -211,7 +211,7 @@
   "times": [],
   "updatedAt": {
     "$date": {
-      "$numberLong": "1677484004813"
+      "$numberLong": "1677519469429"
     }
   },
   "weight": 2690
@@ -222,7 +222,7 @@
   "machine": {
     "$oid": "63f7581e4989959c07c98d59"
   },
-  "__v": 14,
+  "__v": 18,
   "city": "Conroe",
   "createdAt": {
     "$date": {
@@ -238,7 +238,7 @@
   "times": [],
   "updatedAt": {
     "$date": {
-      "$numberLong": "1677484004820"
+      "$numberLong": "1677519469437"
     }
   },
   "weight": 7080
@@ -249,7 +249,7 @@
   "machine": {
     "$oid": "63f7581e4989959c07c98d63"
   },
-  "__v": 14,
+  "__v": 18,
   "city": "Conroe",
   "createdAt": {
     "$date": {
@@ -265,7 +265,7 @@
   "times": [],
   "updatedAt": {
     "$date": {
-      "$numberLong": "1677484004827"
+      "$numberLong": "1677519469444"
     }
   },
   "weight": 3436
@@ -276,7 +276,7 @@
   "machine": {
     "$oid": "63f7581e4989959c07c98d57"
   },
-  "__v": 14,
+  "__v": 18,
   "city": "Conroe",
   "createdAt": {
     "$date": {
@@ -292,7 +292,7 @@
   "times": [],
   "updatedAt": {
     "$date": {
-      "$numberLong": "1677484004835"
+      "$numberLong": "1677519469452"
     }
   },
   "weight": 11176
@@ -303,7 +303,7 @@
   "machine": {
     "$oid": "63f7581e4989959c07c98d7b"
   },
-  "__v": 14,
+  "__v": 18,
   "city": "Conroe",
   "createdAt": {
     "$date": {
@@ -319,7 +319,7 @@
   "times": [],
   "updatedAt": {
     "$date": {
-      "$numberLong": "1677484004842"
+      "$numberLong": "1677519469459"
     }
   },
   "weight": 7326
@@ -330,7 +330,7 @@
   "machine": {
     "$oid": "63f7581e4989959c07c98d7d"
   },
-  "__v": 14,
+  "__v": 18,
   "city": "Conroe",
   "createdAt": {
     "$date": {
@@ -346,7 +346,7 @@
   "times": [],
   "updatedAt": {
     "$date": {
-      "$numberLong": "1677484004849"
+      "$numberLong": "1677519469466"
     }
   },
   "weight": 1950
@@ -357,7 +357,7 @@
   "machine": {
     "$oid": "63f7581e4989959c07c98d7f"
   },
-  "__v": 14,
+  "__v": 18,
   "city": "Conroe",
   "createdAt": {
     "$date": {
@@ -373,8 +373,359 @@
   "times": [],
   "updatedAt": {
     "$date": {
-      "$numberLong": "1677484004856"
+      "$numberLong": "1677519469473"
     }
   },
   "weight": 1671
+},{
+  "_id": {
+    "$oid": "63fc79b885cdf52c93fd7d42"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d69"
+  },
+  "__v": 0,
+  "city": "Gunter",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677490616243"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadabbed382d6da200e09"
+  },
+  "productionTime": 120,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677490616243"
+    }
+  },
+  "weight": 4670
+},{
+  "_id": {
+    "$oid": "63fc79c685cdf52c93fd7d61"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d79"
+  },
+  "__v": 0,
+  "city": "Gunter",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677490630420"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadacbed382d6da201569"
+  },
+  "productionTime": 60,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677490630420"
+    }
+  },
+  "weight": 1540
+},{
+  "_id": {
+    "$oid": "63fc79d985cdf52c93fd7d81"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d6b"
+  },
+  "__v": 0,
+  "city": "Gunter",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677490649353"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadabbed382d6da200ed1"
+  },
+  "productionTime": 0,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677490649353"
+    }
+  },
+  "weight": 0
+},{
+  "_id": {
+    "$oid": "63fc79f785cdf52c93fd7daa"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d77"
+  },
+  "__v": 0,
+  "city": "Gunter",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677490679109"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadabbed382d6da200ec1"
+  },
+  "productionTime": 0,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677490679109"
+    }
+  },
+  "weight": 7326
+},{
+  "_id": {
+    "$oid": "63fc7a0e85cdf52c93fd7dc9"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d65"
+  },
+  "__v": 0,
+  "city": "Gunter",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677490702478"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadabbed382d6da20008d"
+  },
+  "productionTime": 600,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677490702478"
+    }
+  },
+  "weight": 11840
+},{
+  "_id": {
+    "$oid": "63fc7a2885cdf52c93fd7df9"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d6d"
+  },
+  "__v": 0,
+  "city": "Gunter",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677490728166"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadabbed382d6da200969"
+  },
+  "productionTime": 660,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677490728166"
+    }
+  },
+  "weight": 13664
+},{
+  "_id": {
+    "$oid": "63fc7a3685cdf52c93fd7e12"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d67"
+  },
+  "__v": 0,
+  "city": "Gunter",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677490742218"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadabbed382d6da200c81"
+  },
+  "productionTime": 780,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677490742218"
+    }
+  },
+  "weight": 23728
+},{
+  "_id": {
+    "$oid": "63fc7a4a85cdf52c93fd7e39"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d75"
+  },
+  "__v": 0,
+  "city": "Gunter",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677490762929"
+    }
+  },
+  "factory": "Steel",
+  "part": {
+    "$oid": "63faadabbed382d6da200de1"
+  },
+  "productionTime": 120,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677490762929"
+    }
+  },
+  "weight": 1405
+},{
+  "_id": {
+    "$oid": "63fc7a5b85cdf52c93fd7e69"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d73"
+  },
+  "__v": 0,
+  "city": "Gunter",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677490779239"
+    }
+  },
+  "factory": "Steel",
+  "part": {
+    "$oid": "63faadabbed382d6da200ec1"
+  },
+  "productionTime": 0,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677490779239"
+    }
+  },
+  "weight": 7326
+},{
+  "_id": {
+    "$oid": "63fe81f385cdf52c93ff1e5e"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d43"
+  },
+  "__v": 0,
+  "city": "Seguin",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677623795935"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadacbed382d6da201b39"
+  },
+  "productionTime": 0,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677623795935"
+    }
+  },
+  "weight": 15834
+},{
+  "_id": {
+    "$oid": "63fe820485cdf52c93ff1e80"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d41"
+  },
+  "__v": 0,
+  "city": "Seguin",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677623812127"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadabbed382d6da201191"
+  },
+  "productionTime": 0,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677623812127"
+    }
+  },
+  "weight": 10830
+},{
+  "_id": {
+    "$oid": "63fe822885cdf52c93ff1eaa"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d4d"
+  },
+  "__v": 0,
+  "city": "Seguin",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677623848948"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadabbed382d6da200de1"
+  },
+  "productionTime": 120,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677623848948"
+    }
+  },
+  "weight": 1405
+},{
+  "_id": {
+    "$oid": "63fe824985cdf52c93ff1edd"
+  },
+  "machine": {
+    "$oid": "63f7581e4989959c07c98d4f"
+  },
+  "__v": 0,
+  "city": "Seguin",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1677623881512"
+    }
+  },
+  "factory": "Pipe And Box",
+  "part": {
+    "$oid": "63faadabbed382d6da200363"
+  },
+  "productionTime": 300,
+  "status": "Pending",
+  "times": [],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1677623881512"
+    }
+  },
+  "weight": 8720
 }]

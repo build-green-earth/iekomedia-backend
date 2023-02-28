@@ -7,6 +7,7 @@ const TimerLog = require('../models/TimerLog')
 const Job = require('../models/Job')
 
 const moment=require("moment")
+const { startProductionLog, getStartProductionTime } = require('../models/ProductionClock')
 
 const createMachine = async (req, res) => {
   try {
@@ -248,13 +249,20 @@ const editProduct = async (req, res) => {
 const startTimer = async (req, res) => {
   try {
     let timers = [], timerIds = []
-    if (req.body.city) timers = await Timer.find({ city: req.body.city })
-    else timers = await Timer.find({ _id: req.body.id })
+    if (req.body.city) {
+      timers = await Timer.find({ city: req.body.city })
+      startProductionLog(req.body.city)
+    }
+    else {
+      timers = await Timer.find({ _id: req.body.id })
+      console.log(timers.length)
+      if (timers.length)
+        startProductionLog(timers[0].city)
+    }
 
     for (const timer of timers) {
       const time = new Date(req.body.time)
       if (timer.status == "Pending") {
-        const length = timer.times.length
         timer.times = [
           ...timer.times,
           {
@@ -434,4 +442,28 @@ const getTimerLogsOfMachine = async (req, res) => {
   }
 }
 
-module.exports = { createMachine, createPart, createTimer, getProducts, editProduct, deleteProduct, startTimer, endTimer, stopTimer, updateTimer, getTimer, searchMachines, getTimerLogsOfMachine }
+const getStartOfProductionTime = async (req, res) => {
+  try {
+    const log = await getStartProductionTime(req.query.city)
+    res.send({ log })
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+module.exports = { 
+  createMachine, 
+  createPart, 
+  createTimer, 
+  getProducts, 
+  editProduct, 
+  deleteProduct, 
+  startTimer, 
+  endTimer, 
+  stopTimer, 
+  updateTimer, 
+  getTimer, 
+  searchMachines, 
+  getTimerLogsOfMachine,
+  getStartOfProductionTime
+}

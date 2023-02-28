@@ -163,7 +163,6 @@ const readTimerFile = async () => {
   
       await timer.save()
     } catch (err) {
-      console.log(machine, row[1], row[4])
     }
   });
 }
