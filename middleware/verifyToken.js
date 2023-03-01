@@ -7,9 +7,7 @@ const verifyToken = (req, res, next) => {
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, async (err, decoded) => {
     if (err) return res.sendStatus(403)
     const user = await User.findOne({
-      where: {
-        id: decoded.id
-      }
+      id: decoded.id
     })
     req.user = user
     next()

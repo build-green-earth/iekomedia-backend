@@ -24,13 +24,14 @@ const register = async (req, res) => {
   const salt = await bcrypt.genSalt(10)
   const hashPassword = await bcrypt.hash(password, salt)
   try {
-    await User.create({
+    const newUser = new User({
       name: username,
       email,
       password: hashPassword,
       role,
       location
     })
+    await newUser.save()
     res.json({msg: "Registeration Successful"});
   } catch (err) {
     console.log(err)
@@ -49,12 +50,7 @@ const login = async(req, res) => {
     const { id, firstName, lastName, email, role, approved } = user[0]
     const accessToken = jwt.sign({ id, firstName, lastName, email, role, approved }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1d' })
     const refreshToken = jwt.sign({ id, firstName,  lastName, email, role, approved }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '1d' })
-    
-    await User.update({ refresh_token: refreshToken }, {
-      where: {
-        id
-      }
-    })
+
     res.cookie('refreshToken', refreshToken, {
       maxAge: 24 * 60 * 60 * 1000
     })
@@ -70,24 +66,16 @@ const logout = async (req, res) => {
   const refreshToken = req.cookies.refreshToken
   if (!refreshToken) return res.sendStatus(204)
 
-  const user = await User.find({
-    where: {
-      refresh_token: refreshToken
-    }
-  })
   if (!user[0]) return res.sendStatus(204)
   const userId = user[0].id
-  await User.update({ refresh_token: null }, {
-    where: {
-      id: userId
-    }
-  })
   res.clearCookie('refreshToken')
   return res.sendStatus(200)
 }
 
 const allUsers = async (req, res) => {
-  const filter = req.query.filter
+  let filter = req.query.filter
+  if (filter == "undefined") filter = undefined
+
   let where
   let users = []
   if (req.user.role == "Admin") {
@@ -97,24 +85,43 @@ const allUsers = async (req, res) => {
       }
     } else if (filter == "Corporate"){
       where = {
-        [Op.or]: [
-          { role: "Corporate" },
+        $or: [
+          { role: "Corporator" },
           { role: "HR" },
           { role: "Sales" },
           { role: "Accounting" },
         ]
       }
     } else {
-      where = {
-        location: filter,
-        role: "Personnel"
+      if (filter) {
+        where = {
+          location: filter,
+          $or: [
+            { role: "Corporator" },
+            { role: "HR" },
+            { role: "Sales" },
+            { role: "Accounting" },
+            { role: "Admin" },
+          ]
+        }
       }
+      else
+        where = {
+          $or: [
+            { role: "Corporator" },
+            { role: "HR" },
+            { role: "Sales" },
+            { role: "Accounting" },
+            { role: "Admin" },
+          ]
+        }
     }
   } else if (req.user.role == "HR") {
     if (filter == "active-members") where = { approved: 1, role: "Personnel" }
     else if (filter == "pending-members") where = { approved: 0, role: "Personnel" }
     else {
-      where = { factory: filter }
+      if (filter)
+        where = { location: filter }
       if (!req.user.admin)
         where = {
           ...where,
@@ -131,12 +138,7 @@ const allUsers = async (req, res) => {
   }
 
   try {
-    users = await User.find({ attributes: ["id", "name", "email", "role", "approved", "createdAt", "location", "admin", "restrict", "factory"], 
-      where,
-      order: [
-        ['approved', 'ASC']
-      ]
-    })  
+    users = await User.find(where).select("id firstName lastName email role approved createdAt location admin restrict factory");
   } catch(err) { console.log(err) }
   
   
@@ -144,17 +146,11 @@ const allUsers = async (req, res) => {
 }
 
 const approveUser = async (req, res) => {
-  const user = await User.find({
-    where: {
-      id: req.body.id
-    }
+  let user = await User.findOne({
+    _id: req.body.id
   })
-
-  await User.update({ approved: 1 - user[0].approved }, {
-    where: {
-      id: req.body.id
-    }
-  })
+  user.approved = 1 - user[0].approved
+  await user.save()
 
   return res.json({msg: "Successful"})
 }
@@ -163,28 +159,22 @@ const updateUser = async(req, res) => {
   if ((req.user.role != "Production" && !req.user.admin)) return res.status(403)
 
   const user = await User.findOne({
-    where: {
-      id: req.body.id
-    }
+    _id: req.body.id
   })
   if (!user) return res.sendStatus(500)
   if (req.body.delete) {
-    await User.destroy({
-      where: {
-        id: req.body.id
-      }
+    await User.deleteOne({
+      _id: req.body.id
     })
     return res.sendStatus(200)
   }
 
   if (req.user.role == "HR" && req.user.location != user.location) return
 
-  await User.update({
-    ...req.body
+  await User.updateOne({
+    _id: req.body.id
   }, {
-    where: {
-      id: req.body.id,
-    }
+    ...req.body
   })
 
   res.sendStatus(200)
