@@ -177,7 +177,7 @@ const readTimerFile = async () => {
       })
   
       await timerLog.save()
-      console.log(timerLog, 'saved')
+      console.log(timerLog, 'saved to database')
     } catch (err) {
       console.log(err)
     }
