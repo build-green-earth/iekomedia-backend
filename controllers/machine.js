@@ -396,6 +396,7 @@ const getTimerLogsOfMachine = async (req, res) => {
 
   try {
     const page = req.query.page || 1
+    const includeOperator = req.query.includeOperator=="true"
 
     let { machine, part, from, to } = req.query
     let _logs
@@ -408,7 +409,7 @@ const getTimerLogsOfMachine = async (req, res) => {
         $lt: new Date(to)
       },
     }).populate("timer")
-      .populate({ path: "timer", populate: { path: "part" } })
+      .populate("part")
       .sort({ createdAt: -1 })
       .lean()
     let totalTons = 0, totalGain = 0, totalLoss = 0, totalFloat = 0
@@ -426,7 +427,8 @@ const getTimerLogsOfMachine = async (req, res) => {
 
         return {
           ...log,
-          time
+          time,
+          operator: includeOperator ? log.operator : ""
         }
       })
     res.send({ 

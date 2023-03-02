@@ -8,48 +8,45 @@ const path = require('path')
 const fs = require('fs')
 
 const register = async (req, res) => {
-  const { username, email, password, confirmPassword, role, location } = req.body
+  const { firstName, lastName, email, password, confirmPassword, role, location } = req.body
 
   let user = await User.find({
     email: req.body.email
   });
-  if (user.length) return res.status(400).json({msg: "Email already exists!"})
+  if (user.length) return res.status(400).json({ msg: "Email already exists!" })
 
-  user = await User.find({
-    name: req.body.username
-  });
-  if (user.length) return res.status(400).json({msg: "Username already exists!"})
 
-  if (password !== confirmPassword) return res.status(400).json({msg: "Password and Confirm Password does not match"})
+  if (password !== confirmPassword) return res.status(400).json({ msg: "Password and Confirm Password does not match" })
   const salt = await bcrypt.genSalt(10)
   const hashPassword = await bcrypt.hash(password, salt)
   try {
     const newUser = new User({
-      name: username,
+      firstName,
+      lastName,
       email,
       password: hashPassword,
       role,
-      location
+      location,
     })
     await newUser.save()
-    res.json({msg: "Registeration Successful"});
+    res.json({ msg: "Registeration Successful" });
   } catch (err) {
     console.log(err)
   }
-} 
+}
 
-const login = async(req, res) => {
+const login = async (req, res) => {
   try {
     const user = await User.find({
       email: req.body.email
     });
     const match = await bcrypt.compare(req.body.password, user[0].password)
-    if (!match) return res.status(400).json({msg: "Wrong Password"});
-    if (!user[0].approved) return res.status(403).json({msg: "Your account is under review"})
+    if (!match) return res.status(400).json({ msg: "Wrong Password" });
+    if (!user[0].approved) return res.status(403).json({ msg: "Your account is under review" })
 
-    const { id, firstName, lastName, email, role, approved } = user[0]
-    const accessToken = jwt.sign({ id, firstName, lastName, email, role, approved }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1d' })
-    const refreshToken = jwt.sign({ id, firstName,  lastName, email, role, approved }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '1d' })
+    const { _id, firstName, lastName, email, role, approved } = user[0]
+    const accessToken = jwt.sign({ _id, firstName, lastName, email, role, approved }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1d' })
+    const refreshToken = jwt.sign({ _id, firstName, lastName, email, role, approved }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '1d' })
 
     res.cookie('refreshToken', refreshToken, {
       maxAge: 24 * 60 * 60 * 1000
@@ -74,6 +71,8 @@ const logout = async (req, res) => {
 
 const allUsers = async (req, res) => {
   let filter = req.query.filter
+  const page = req.query.page || 1
+  const count = req.query.count || 7
   if (filter == "undefined") filter = undefined
 
   let where
@@ -83,10 +82,10 @@ const allUsers = async (req, res) => {
       where = {
         role: "Production"
       }
-    } else if (filter == "Corporate"){
+    } else if (filter == "Corporater") {
       where = {
         $or: [
-          { role: "Corporator" },
+          { role: "Corporater" },
           { role: "HR" },
           { role: "Sales" },
           { role: "Accounting" },
@@ -97,10 +96,12 @@ const allUsers = async (req, res) => {
         where = {
           location: filter,
           $or: [
-            { role: "Corporator" },
+            { role: "Corporater" },
             { role: "HR" },
             { role: "Sales" },
             { role: "Accounting" },
+            { role: "Production" },
+            { role: "Personnel" },
             { role: "Admin" },
           ]
         }
@@ -108,17 +109,19 @@ const allUsers = async (req, res) => {
       else
         where = {
           $or: [
-            { role: "Corporator" },
+            { role: "Corporater" },
             { role: "HR" },
             { role: "Sales" },
             { role: "Accounting" },
+            { role: "Production" },
+            { role: "Personnel" },
             { role: "Admin" },
           ]
         }
     }
   } else if (req.user.role == "HR") {
-    if (filter == "active-members") where = { approved: 1, role: "Personnel" }
-    else if (filter == "pending-members") where = { approved: 0, role: "Personnel" }
+    if (filter == "active-members") where = { approved: 1 }
+    else if (filter == "pending-members") where = { approved: 0 }
     else {
       if (filter)
         where = { location: filter }
@@ -127,6 +130,21 @@ const allUsers = async (req, res) => {
           ...where,
           location: req.user.location
         }
+    }
+
+    if (req.user.admin) {
+      where = {
+        ...where,
+        role: { $ne: "Admin" }
+      }
+    } else {
+      where = {
+        ...where,
+        $or: [
+          { role: "Personnel" },
+          { role: "Production" },
+        ]
+      }
     }
   } else if (req.user.role == "Production") {
     if (filter == "active-personnel") where = { approved: 1, role: "Personnel" }
@@ -138,11 +156,11 @@ const allUsers = async (req, res) => {
   }
 
   try {
-    users = await User.find(where).select("id firstName lastName email role approved createdAt location admin restrict factory");
-  } catch(err) { console.log(err) }
-  
-  
-  return res.json({users, isAdmin: req.user.admin})
+    users = await User.find(where).and({ _id: { $ne: req.user._id } }).skip((page - 1) * count).limit(count).select("id firstName lastName email role approved createdAt location admin restrict factory");
+  } catch (err) { console.log(err) }
+
+
+  return res.json({ users, isAdmin: req.user.admin })
 }
 
 const approveUser = async (req, res) => {
@@ -152,10 +170,10 @@ const approveUser = async (req, res) => {
   user.approved = 1 - user[0].approved
   await user.save()
 
-  return res.json({msg: "Successful"})
+  return res.json({ msg: "Successful" })
 }
 
-const updateUser = async(req, res) => {
+const updateUser = async (req, res) => {
   if ((req.user.role != "Production" && !req.user.admin)) return res.status(403)
 
   const user = await User.findOne({
@@ -180,7 +198,7 @@ const updateUser = async(req, res) => {
   res.sendStatus(200)
 }
 
-const remainingTime = async(req, res) => {
+const remainingTime = async (req, res) => {
   res.json({ time: global.remaining })
 }
 

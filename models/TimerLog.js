@@ -15,6 +15,10 @@ const timerLogSchema = new Schema({
   weight: Number,
   productionTime: Number,
   operator: String,
+  id: {
+    type: Number,
+    default: 1
+  },
   times: [
     {
       startTime: {

@@ -19,6 +19,7 @@ const createJob = async (req, res) => {
 const getJobs = async (req, res) => {
   try {
     const page = req.query.page || 1
+    const count = req.query.count || 7
     let active = true
     const keyword = req.query.query || ""
     if ("tab" in req.query) active = req.query.tab
@@ -36,8 +37,9 @@ const getJobs = async (req, res) => {
       .populate("part")
       .populate("user")
       .where({ active, name: { "$regex": keyword, "$options": "i" } })
-      .skip((page - 1) * ITEMS_PER_PAGE)
-      .limit(ITEMS_PER_PAGE)
+      .skip((page - 1) * count)
+      .limit(count)
+    console.log(jobs)
     res.send({ jobs, totalActiveCount: activeJobs.length, totalFinishedCount: finishedJobs.length, resultCount: totalJobs.length })
   } catch (err) {
     console.log(err)
