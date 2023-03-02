@@ -28,9 +28,7 @@ const port = process.env.PORT || 8000
 const MONGO_URI = process.env.MONGO_URI
 mongoose.connect(MONGO_URI)
   .then(async() => {
-    console.log('start reading')
     console.log('db connected')
-    readTimerFile()
   })
   .catch(err => console.log(err))
 
@@ -46,6 +44,7 @@ app.use(router)
 // readPartFile()
 // readMachineFile()
 // readJobFile()
+// readTimerFile()
 
 server.listen(port, () => { console.log(`server running at port ${port}`) })
 
