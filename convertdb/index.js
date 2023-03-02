@@ -159,7 +159,6 @@ const readTimerFile = async () => {
       }
 
       const timer = await Timer.findOne({ machine })
-      console.log(timer, startTime, endTime, part)
       if (!timer || !startTime || !endTime || !part) return
 
       try {
@@ -176,7 +175,6 @@ const readTimerFile = async () => {
         })
     
         await timerLog.save()
-        console.log(timerLog, 'saved to database')
       } catch (err) {
         console.log(err)
       }
