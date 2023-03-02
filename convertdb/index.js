@@ -130,57 +130,59 @@ const readTimerFile = async () => {
   stream.on("data", async (data, index) => {
     const row = data.formatted.arr
     if (row[0] == "id") return
-
-    console.log(row)
-
-    const machineIndex = machines.findIndex((m, index) => m[0] == row[1])
-    let machine = undefined
-    if (machineIndex != -1)
-      machine = await Machine.findOne({ name: machines[machineIndex][2] })
-
-    const partIndex = parts.findIndex((p, index) => p[0] == row[4])
-    let part = undefined
-    if (partIndex != -1)
-      part = await Part.findOne({ name: parts[partIndex][1] })
-
-    const startTime = checkTime(row[5])
-    const endTime = checkTime(row[6])
-
-    const startTime2 = checkTime(row[8])
-    const endTime2 = checkTime(row[9])
-
-    const _times = [{
-      startTime,
-      endTime
-    }]
-    if (startTime2 && endTime2) {
-      _times.push({
-        startTime: startTime2,
-        endTime: endTime2
-      })
-    }
-
-    const timer = await Timer.findOne({ machine })
-    if (!timer || !startTime || !endTime || !part) return
-
     try {
+      const machineIndex = machines.findIndex((m, index) => m[0] == row[1])
+      let machine = undefined
+      if (machineIndex != -1)
+        machine = await Machine.findOne({ name: machines[machineIndex][2] })
 
-      const timerLog = new TimerLog({
-        timer,
-        part,
-        weight: part.pounds,
-        productionTime: part.avgTime,
-        operator: "",
-        times: _times,
-        createdAt: new Date(row[12]),
-        id: parseInt(row[0])
-      })
-  
-      await timerLog.save()
-      console.log(timerLog, 'saved to database')
+      const partIndex = parts.findIndex((p, index) => p[0] == row[4])
+      let part = undefined
+      if (partIndex != -1)
+        part = await Part.findOne({ name: parts[partIndex][1] })
+
+      const startTime = checkTime(row[5])
+      const endTime = checkTime(row[6])
+
+      const startTime2 = checkTime(row[8])
+      const endTime2 = checkTime(row[9])
+
+      const _times = [{
+        startTime,
+        endTime
+      }]
+      if (startTime2 && endTime2) {
+        _times.push({
+          startTime: startTime2,
+          endTime: endTime2
+        })
+      }
+
+      const timer = await Timer.findOne({ machine })
+      if (!timer || !startTime || !endTime || !part) return
+
+      try {
+
+        const timerLog = new TimerLog({
+          timer,
+          part,
+          weight: part.pounds,
+          productionTime: part.avgTime,
+          operator: "",
+          times: _times,
+          createdAt: new Date(row[12]),
+          id: parseInt(row[0])
+        })
+    
+        await timerLog.save()
+        console.log(timerLog, 'saved to database')
+      } catch (err) {
+        console.log(err)
+      }
     } catch (err) {
       console.log(err)
     }
+    
   });
 }
 
