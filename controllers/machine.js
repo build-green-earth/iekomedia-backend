@@ -289,6 +289,9 @@ const endTimer = async (req, res) => {
     if (req.body.city) timers = await Timer.find({city: req.body.city})
     else timers = await Timer.find({ _id: req.body.id })
 
+    const lastTimer = await TimerLog.findOne({}, {}, { sort: { createdAt: -1 } }).lean()
+    let id = lastTimer.id > 90000 ? lastTimer.id : 90000
+
     for (const timer of timers) {
       const now = new Date(req.body.time)
 
@@ -306,7 +309,8 @@ const endTimer = async (req, res) => {
         weight: timer.weight,
         times: timer.times,
         part: timer.part,
-        operator: timer.operator
+        operator: timer.operator,
+        id: ++id
       })
       timerIds.push(timer._id)
       await timerLog.save()

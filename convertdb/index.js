@@ -112,13 +112,22 @@ const readTimerFile = async () => {
   const machines = await readExcel("./convertdb/machines.xlsx")
 
   await TimerLog.deleteMany({})
-  const stream = await getXlsxStream({
-    filePath: "./convertdb/timers.xlsx",
-    sheet: 0,
-  });
+  let stream
+  console.log('started')
+  try {
+    stream = await getXlsxStream({
+      filePath: "./convertdb/timers.xlsx",
+      sheet: 0,
+    });
+  } catch (err) {
+    console.log(err)
+  }
+  
   stream.on("data", async (data, index) => {
     const row = data.formatted.arr
     if (row[0] == "id") return
+
+    console.log(row)
 
     const machineIndex = machines.findIndex((m, index) => m[0] == row[1])
     let machine = undefined
