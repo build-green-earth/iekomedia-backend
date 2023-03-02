@@ -290,7 +290,7 @@ const endTimer = async (req, res) => {
     else timers = await Timer.find({ _id: req.body.id })
 
     const lastTimer = await TimerLog.findOne({}, {}, { sort: { createdAt: -1 } }).lean()
-    let id = lastTimer.id > 90000 ? lastTimer.id : 90000
+    let id = lastTimer.id > 900000 ? lastTimer.id : 900000
 
     for (const timer of timers) {
       const now = new Date(req.body.time)
