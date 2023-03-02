@@ -109,18 +109,15 @@ const readMachineFile = async () => {
 const readTimerFile = async () => {
 
   let parts, machines
-  console.log('here')
   try {
     parts = await readExcel("./convertdb/parts.xlsx")
     machines = await readExcel("./convertdb/machines.xlsx")
   } catch (err) {
     console.log(err)
   }  
-  console.log('here1')
 
   await TimerLog.deleteMany({})
   let stream
-  console.log('started')
   try {
     stream = await getXlsxStream({
       filePath: "./convertdb/timers.xlsx",
@@ -180,6 +177,7 @@ const readTimerFile = async () => {
       })
   
       await timerLog.save()
+      console.log(timerLog, 'saved')
     } catch (err) {
       console.log(err)
     }
