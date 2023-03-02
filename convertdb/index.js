@@ -108,8 +108,13 @@ const readMachineFile = async () => {
 
 const readTimerFile = async () => {
 
-  const parts = await readExcel("./convertdb/parts.xlsx")
-  const machines = await readExcel("./convertdb/machines.xlsx")
+  let parts, machines
+  try {
+    parts = await readExcel("./convertdb/parts.xlsx")
+    machines = await readExcel("./convertdb/machines.xlsx")
+  } catch (err) {
+    console.log(err)
+  }  
 
   await TimerLog.deleteMany({})
   let stream
