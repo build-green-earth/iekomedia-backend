@@ -43,7 +43,7 @@ app.use(router)
 
 // readPartFile()
 // readMachineFile()
-// readTimerFile()
+readTimerFile()
 // readJobFile()
 
 server.listen(port, () => { console.log(`server running at port ${port}`) })
