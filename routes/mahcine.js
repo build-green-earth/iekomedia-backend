@@ -32,7 +32,7 @@ const uploadPartPreview = multer({
   storage: partStorage,
 });
 
-const { createMachine, createPart, createTimer, getProducts, deleteProduct, editProduct, startTimer, endTimer, stopTimer, updateTimer, getTimer, searchMachines, getTimerLogsOfMachine, getStartOfProductionTime } = require("../controllers/machine")
+const { createMachine, createPart, createTimer, getProducts, deleteProduct, editProduct, startTimer, endTimer, stopTimer, updateTimer, getTimer, searchMachines, getTimerLogsOfMachine, getStartOfProductionTime, getLogsToPrint } = require("../controllers/machine")
 const { verifyToken } = require("../middleware/verifyToken")
 
 router.post("/create-machine", [verifyToken, uploadMachinePreview.single("preview")], createMachine)
@@ -48,6 +48,7 @@ router.post("/update-timer", verifyToken, updateTimer)
 router.get("/get-timer", verifyToken, getTimer)
 router.get("/search-machines", verifyToken, searchMachines)
 router.get("/timer-logs-of-machine", verifyToken, getTimerLogsOfMachine)
+router.get("/timer-logs-to-print", verifyToken, getLogsToPrint)
 router.get("/start-of-production-time", verifyToken, getStartOfProductionTime)
 
 module.exports = router

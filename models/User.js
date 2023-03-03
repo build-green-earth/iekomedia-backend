@@ -15,9 +15,10 @@ const userSchema = new Schema({
   role: String,
   location: String,
   factory: String,
-  approved: Boolean,
+  approved: Number,
   admin: Boolean,
   restrict: Boolean,
+  avatar: String
 })
 
 module.exports = mongoose.model("Users", userSchema)
